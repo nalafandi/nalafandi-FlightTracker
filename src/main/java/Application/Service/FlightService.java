@@ -71,15 +71,15 @@ public class FlightService {
      */
     public Flight updateFlight(int flight_id, Flight flight){
         
-        Flight updatedFlight = flightDAO.getFlightById(flight_id);
+        flight = flightDAO.getFlightById(flight_id);
 
-        if ( updatedFlight == null) {
+        if ( flight == null) {
             System.out.println("Update Failed!");
             return null;            
         } else {
-            flightDAO.updateFlight(flight_id, updatedFlight);            
+            flightDAO.updateFlight(flight_id, flight);            
         }
-        return updatedFlight;
+        return flight;
     }
 
     /**
